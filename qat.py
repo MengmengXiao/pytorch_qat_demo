@@ -63,6 +63,7 @@ print("QAT finished")
 # 5.Convert to quantization model
 model_prepared.eval()
 quant_model = torch.ao.quantization.convert(model_prepared)
+torch.save(quant_model.state_dict(), "./output/qat.pth")
 
 
 # 6.Convert to onnx format
